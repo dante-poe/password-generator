@@ -4,6 +4,8 @@ var lowArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p',
 var upArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var specArray = ['!','@','#','$','%','&','?','(',')','"',',','*','+','>','<','-','=','/',';',':','_','^','[',']','{','}','|','`','~','.',',',"'"]; 
 
+
+
 // randomize arrays
 // var randomLower = lowArray[Math.floor(Math.random() * lowArray.length)];
 // var randomUpper = upArray[Math.floor(Math.random() * upArray.length)];
@@ -12,23 +14,40 @@ var specArray = ['!','@','#','$','%','&','?','(',')','"',',','*','+','>','<','-'
 
 
 //the entire function to generate a random password
-function generatePassword(passLength, passLow, passUp, passSpec){
+function generatePassword(){
+  //variables to hold all of the user input criteria
+ 
+
+
   //first prompt about length
-  var inputLength = prompt('How long should the password be?');
-  var passLength = parseInt(inputLength);
+  var inputLength = prompt('Please set the password length');
+  var confirmLength = parseInt(inputLength);
+  
   //check to see if the input matches the criteria
-  if (passLength >= 8 && passLength <=128){
-    //if the input criteria is met, then prompt for special characters
-    var passSpec = confirm('Would you like to include special characters?')
-    //
-    if (passSpec){
-      var passUp = confirm('Would you like to include uppercase letters?') 
+  if (confirmLength >= 8 && confirmLength <=128){
+    
+    //if the input criteria is met, then prompt for uppercase letters
+    var confirmUp = confirm('Would you like to include uppercase letters?');
+    
+    //then prompt about special characters
+    var confirmSpec = confirm('Would you like to include special characters?'); 
+    
+    // if user wants both uppercase and special characters
+    if (confirmUp && confirmSpec){
+      //generate a password using every array
     }
-    else {
-    
+    // if user wants only uppercase and no special characters
+    else if(confirmUp){
+
     }
-    
-    
+    // if user only wants special characters and no uppercase
+    else if(confirmSpec){
+
+    }
+    // if user wants to include neither
+    else{
+
+    }
   }
   //if the user hits cancel on the first prompt, end the function.
   else if (inputLength === null){
