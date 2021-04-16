@@ -15,21 +15,21 @@ var specArray = ['!','@','#','$','%','&','?','(',')','"',',','*','+','>','<','-'
 function generatePassword(passLength, passLow, passUp, passSpec){
   var inputLength = prompt('How long should the password be?');
   var passLength = parseInt(inputLength);
-  if (inputLength >= 8 || inputLength <= 128){
-    console.log(inputLength);
-
+  if (passLength >= 8 && passLength <=128){
+    var passSpec = confirm('Would you like to include special characters?')
+    if (passSpec){
+      var passUp = confirm('Would you like to include uppercase letters?') 
+    }
+    else {
+      alert('they said no')
+    }
+    
+    
   }
   else {
     alert('Password must be between 8 and 128 characters!')    
-
-  }
-
-
-
-  console.log(passLength)
-  
-
-  
+    writePassword();
+  }  
 }
 
 
