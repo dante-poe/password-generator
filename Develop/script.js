@@ -45,8 +45,9 @@ function generatePassword(){
     
     // if user wants all three criteria
     if (confirmUp && confirmSpec && confirmNum){
-      for (var i = 0; i < allArray; i++){
-        var num = Math.floor(Math.random(allArray) * confirmLength) + 1;
+      
+      for (var i = 0; i < allArray.length; i++){
+        var num = Math.floor(Math.random(confirmLength) * allArray[i]);
         console.log(num);
       }
     }
