@@ -26,7 +26,7 @@ function generatePassword(){
   //variables to hold all of the user input criteria
  
 
-
+  var result = '';
   //first prompt about length
   var inputLength = prompt('Please set the password length');
   var confirmLength = parseInt(inputLength);
@@ -46,9 +46,10 @@ function generatePassword(){
     // if user wants all three criteria
     if (confirmUp && confirmSpec && confirmNum){
       
-      for (var i = 0; i < allArray.length; i++){
-        var num = Math.floor(Math.random(confirmLength) * allArray[i]);
-        console.log(num);
+      for (var i = 0; i < confirmLength; i++){
+        var num = Math.floor(Math.random() * allArray.length);
+        result += allArray[num]; 
+        console.log(allArray[num]);
       }
     }
     // if user wants only uppercase and numbers
@@ -87,8 +88,9 @@ function generatePassword(){
   //alert user that the input did not match criteria
   else {
     alert('Password must be between 8 and 128 characters!')    
-    writePassword();
   }  
+  return result;
+
 }
 
 
