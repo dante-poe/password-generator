@@ -30,7 +30,6 @@ function generatePassword(){
   //first prompt about length
   var inputLength = prompt('Please set the password length');
   var confirmLength = parseInt(inputLength);
-  console.log(confirmLength);
   //check to see if the input matches the criteria
   if (confirmLength >= 8 && confirmLength <=128){
     
@@ -54,31 +53,59 @@ function generatePassword(){
     }
     // if user wants only uppercase and numbers
     else if(confirmUp && confirmNum){
-
+      for (var i = 0; i < confirmLength; i++){
+      var num = Math.floor(Math.random() * unArray.length);
+        result += unArray[num]; 
+        console.log(unArray[num]);
+      }
     }
     // upper and spec
     else if(confirmUp && confirmSpec){
-
+      for (var i = 0; i < confirmLength; i++){
+      var num = Math.floor(Math.random() * usArray.length);
+        result += usArray[num]; 
+        console.log(usArray[num]);
+      }
     }
     // special and numbers
     else if(confirmSpec && confirmNum){
-
+      for (var i = 0; i < confirmLength; i++){
+      var num = Math.floor(Math.random() * nsArray.length);
+        result += nsArray[num]; 
+        console.log(nsArray[num]);
+      }
     }
     //just upper
     else if (confirmUp){
-
+      for (var i = 0; i < confirmLength; i++){
+      var num = Math.floor(Math.random() * upArray.length);
+        result += upArray[num]; 
+        console.log(upArray[num]);
+      }
     }
     //just special
     else if(confirmSpec) {
-
+      for (var i = 0; i < confirmLength; i++){
+      var num = Math.floor(Math.random() * specArray.length);
+        result += specArray[num]; 
+        console.log(specArray[num]);
+      }
     }
     //just numbers
     else if (confirmNum){
-
+      for (var i = 0; i < confirmLength; i++){
+      var num = Math.floor(Math.random() * numArray.length);
+        result += numArray[num]; 
+        console.log(numArray[num]);
+       }
     }
     //just lowercase
     else {
-
+      for (var i = 0; i < confirmLength; i++){
+      var num = Math.floor(Math.random() * lowArray.length);
+        result += lowArray[num]; 
+        console.log(lowArray[num]);
+      }
     }
   }
   //if the user hits cancel on the first prompt, end the function.
